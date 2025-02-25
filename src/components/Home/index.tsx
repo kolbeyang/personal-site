@@ -16,7 +16,7 @@ const Home = () => {
             />
           </div>
           <div className="font-black text-base-03 text-[32px] leading-[40px]">
-            HI, I'M KOLBE
+            HI, I&apos;M KOLBE
           </div>
         </div>
         <BubbleButtonSection />
