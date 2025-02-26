@@ -11,11 +11,11 @@ const Home = () => {
             <Image
               src="/profile_pic.jpg" // Image in the public folder
               alt="A description of the image"
-              width={120} // Desired width
-              height={120} // Desired height
+              width={100} // Desired width
+              height={100} // Desired height
             />
           </div>
-          <div className="font-black text-base-03 text-[32px] leading-[40px]">
+          <div className="font-black text-base-03 text-[28px] leading-[30px]">
             HI, I&apos;M KOLBE
           </div>
         </div>

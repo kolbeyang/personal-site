@@ -20,7 +20,7 @@ const LinkButton = ({
     <a className={cn("flex", className)} href={href} target="_blank">
       <button
         className={cn(
-          "bg-base-03/20 rounded-full size-[72px] flex justify-center items-center border-[3px] border-base-03 border-opacity-50 text-base-03 hover:text-base hover:bg-base-03",
+          "bg-base-03/20 rounded-full size-[66px] flex justify-center items-center border-[3px] border-base-03 border-opacity-50 text-base-03 hover:text-base hover:bg-base-03",
           buttonClassName,
         )}
       >
