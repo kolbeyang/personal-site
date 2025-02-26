@@ -6,7 +6,7 @@
     },
     {
       "source": "/habits/:path*",
-      "destination": "https://habit-tracker-eight-eta.vercel.app/:path*"
+      "destination": "https://habit-tracker-git-main-kolbeyangs-projects.vercel.app/:path*"
     }
   ]
 }
