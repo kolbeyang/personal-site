@@ -3,6 +3,10 @@
     {
       "source": "/time/:path*",
       "destination": "https://time-diff-visualizer-git-main-kolbeyangs-projects.vercel.app/:path*"
+    },
+    {
+      "source": "/habits/:path*",
+      "destination": "https://habit-tracker-eight-eta.vercel.app/:path*"
     }
   ]
 }
