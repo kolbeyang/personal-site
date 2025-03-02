@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/time/:path*",
+      "destination": "time-diff-visualizer-git-main-kolbeyangs-projects.vercel.app/:path*"
+    }
+  ]
+}

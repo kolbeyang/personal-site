@@ -4,7 +4,7 @@ import Links from "./Links";
 
 const Home = () => {
   return (
-    <div className="flex justify-between flex-col items-center pt-[36px] pb-[24px] size-full">
+    <div className="flex justify-between flex-col items-center pt-[36px] pb-[24px] gap-[20px] size-full">
       <div className="w-full gap-[20px] flex flex-col">
         <div className="flex flex-col gap-[16px] items-center">
           <div className="border border-[8px] border-base-03 rounded-full overflow-hidden w-fit">
