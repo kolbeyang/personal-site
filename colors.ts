@@ -13,6 +13,10 @@ const colors = {
 
   "red-03": "#ff7373",
   "red-05": "#ab006f",
+
+  "bg-03": "#99bec3",
+  "bg-04": "#8dabb9",
+  "bg-05": "#7796b7",
 };
 
 export default colors;
