@@ -68,7 +68,11 @@ const Links = ({ className }: Props) => {
       id="socials"
       className={cn("flex w-full flex-col items-center gap-[20px]", className)}
     >
-      <div className="flex flex-col text-[80px] leading-[64px] font-medium tracking-tighter items-center">
+      <div
+        className=" flex flex-col text-[60px] sm:text-[80px] leading-[48px] sm:leading-[64px] font-medium tracking-tighter items-center
+
+        "
+      >
         {currentHoveredKey ? (
           <>
             <span>{hoveredSocialLink?.key.toUpperCase()}</span>

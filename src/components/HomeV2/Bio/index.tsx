@@ -7,7 +7,7 @@ const Bio = ({ className }: Props) => {
   return (
     <section
       className={cn(
-        "flex text-[40px] font-medium leading-[34px] justify-center gap-2 flex-col tracking-tighter items-start",
+        "flex text-[30px] sm:text-[40px] font-medium leading-[26px] sm:leading-[34px] justify-center gap-2 flex-col tracking-tighter items-start",
         className,
       )}
     >

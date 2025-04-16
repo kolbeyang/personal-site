@@ -22,7 +22,7 @@ const Header = ({ className }: Props) => {
   return (
     <motion.header
       className={cn(
-        "px-5 py-1 w-screen flex justify-between text-sm font-semibold",
+        "px-2 sm:px-5 py-1 w-screen flex justify-between text-sm font-semibold",
         className,
       )}
       initial={{ top: 0 }}
@@ -34,8 +34,8 @@ const Header = ({ className }: Props) => {
         duration: 0.2,
       }}
     >
-      <span className="py-[2px]">KOLBE YANG</span>
-      <span className="flex gap-1">
+      <span className="py-[2px] px-1">KOLBE YANG</span>
+      <span className="flex sm:gap-1">
         <HeaderButton href="#work">WORK</HeaderButton>
         <HeaderButton href="#socials">SOCIALS</HeaderButton>
         <HeaderButton href="#contact">CONTACT</HeaderButton>

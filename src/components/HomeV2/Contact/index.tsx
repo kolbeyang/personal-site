@@ -11,7 +11,11 @@ const Contact = ({ className }: Props) => {
       id="contact"
       className={cn("flex w-full flex-col items-center gap-[20px]", className)}
     >
-      <div className="w-full flex flex-col text-[80px] leading-[64px] font-medium tracking-tighter items-center">
+      <div
+        className=" flex flex-col text-[60px] sm:text-[80px] leading-[48px] sm:leading-[64px] font-medium tracking-tighter items-center
+
+        "
+      >
         <span>LET&apos;S</span>
         <span>GET</span>
         <span>IN TOUCH</span>

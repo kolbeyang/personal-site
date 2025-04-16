@@ -41,7 +41,7 @@ const MainText = ({ className }: Props) => {
         delay: 1.5,
       }}
       className={cn(
-        "flex flex-col items-end absolute right-[50%] translate-x-[200px] top-[50%] -translate-y-[calc(50%+140px)] text-white text-[80px] leading-[70px] tracking-tighter",
+        "flex flex-col items-end absolute w-full right-3 min-[440px]:right-[50%] min-[440px]:translate-x-[200px] top-[50%] -translate-y-[calc(50%+140px)] text-white text-[80px] leading-[70px] tracking-tighter",
         className,
       )}
     >

@@ -37,7 +37,7 @@ const Tools = ({ className }: Props) => {
   return (
     <section
       className={cn(
-        "flex text-[60px] leading-[42px] justify-center gap-2 flex-col tracking-tighter items-end font-medium ",
+        "flex text-[50px] sm:text-[60px] leading-[32px] sm:leading-[42px] justify-center gap-2 flex-col tracking-tighter items-end font-medium ",
         className,
       )}
     >

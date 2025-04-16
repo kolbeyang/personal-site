@@ -12,25 +12,30 @@ interface Props {
 const ProjectCard = ({ value }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { title, imagePaths } = value;
+  const { title, imagePaths, link } = value;
   const buttonClassName =
-    "rounded-md ring ring-inset size-[60px] flex justify-center items-center";
+    "rounded-md ring ring-inset size-[50px] sm:size-[60px] flex justify-center items-center";
   return (
     <div className="flex flex-col gap-2 w-full">
       <div className="flex justify-between w-full item-center">
-        <span className="text-[36px] font-medium">{title.toUpperCase()}</span>
+        <span className="text-[30px] sm:text-[40px] font-medium">
+          {title.toUpperCase()}
+        </span>
         <span className="flex gap-1">
           <Button
             className={cn(buttonClassName)}
             onClick={() => setIsOpen((p) => !p)}
           >
-            <IconEye size={48} stroke={1} />
+            <IconEye className="size-[40px] sm:size-[48px]" stroke={1} />
           </Button>
           <Button
             className={cn(buttonClassName)}
-            onClick={() => setIsOpen((p) => !p)}
+            onClick={() => window.open(link, "_blank")}
           >
-            <IconArrowUpRight size={48} stroke={1} />
+            <IconArrowUpRight
+              className="size-[40px] sm:size-[48px]"
+              stroke={1}
+            />
           </Button>
         </span>
       </div>

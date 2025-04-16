@@ -25,11 +25,11 @@ const LinkButton = ({
     <a className={cn("flex", className)} target="_blank" {...props}>
       <Button
         className={cn(
-          "rounded-md ring ring-inset size-[72px] flex justify-center items-center",
+          "rounded-md ring ring-inset sm:size-[72px] flex justify-center items-center size-[56px]",
           buttonClassName,
         )}
       >
-        <IconComponent size={40} stroke={1} />
+        <IconComponent className="size-[30px] sm:size-[40px]" stroke={1} />
       </Button>
     </a>
   );

@@ -21,7 +21,7 @@ const Home = () => {
   const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [-13, 20, 100]);
 
   return (
-    <div className="w-screen overflow-x-hidden items-center flex flex-col relative">
+    <div className="w-full overflow-x-hidden items-center flex flex-col relative">
       {/* Main scene */}
       <div
         className="relative w-screen h-screen shrink-0 flex justify-center items-center bg-bg-400"
@@ -61,7 +61,15 @@ const Home = () => {
           />
 
           {/*Absolutely positioned background gradient*/}
-          <div className="translate-y-[50%] translate-x-[100px] left-0 absolute h-[600px] aspect-square bg-radial from-pink-300/30 to-transparent to-[60%] z-10 pointer-events-none" />
+          <motion.div
+            className="translate-y-[50%] translate-x-[100px] left-0 absolute h-[600px] aspect-square bg-radial from-pink-300/30 to-transparent to-[60%] z-10 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 1,
+            }}
+          />
 
           {/*Image of me on the couch*/}
           <motion.img
@@ -73,7 +81,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-              duration: 1.5,
+              duration: 2.5,
               delay: 0.5,
             }}
           />
