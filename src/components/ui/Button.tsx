@@ -8,7 +8,7 @@ export interface ButtonProps
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, isDisabled = false, isIcon = false, ...props }, ref) => {
+  ({ className, isDisabled = false, ...props }, ref) => {
     return (
       <button
         className={cn(

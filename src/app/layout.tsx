@@ -1,4 +1,3 @@
-import ScrollWrapper from "@/components/ui/ScrollWrapper";
 import { cn } from "@/utils/classNameMerge";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
