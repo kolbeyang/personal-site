@@ -12,13 +12,14 @@ import Header from "./Header";
 const Home = () => {
   const rotateRef = useRef(null);
 
-  // Get the scroll percentage using useScroll hook
   const { scrollYProgress } = useScroll({
     target: rotateRef,
     offset: ["start start", "end start"],
   });
 
   const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [-13, 20, 100]);
+
+  const mainWidthClassName = "max-w-[900px] w-full px-3";
 
   return (
     <div className="w-full overflow-x-hidden items-center flex flex-col relative">
@@ -75,9 +76,9 @@ const Home = () => {
           <motion.img
             src="/me-and-the-couch.PNG" // Image in the public folder
             alt="A description of the image"
-            className="absolute flex justify-end flex-col items-start left-[-120px] bottom-[-200px] brightness-110 hue-rotate-15"
-            width={320}
-            height={320}
+            className="absolute flex justify-end flex-col items-start left-[-230px] bottom-[-440px]"
+            width={420}
+            height={420}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -96,12 +97,12 @@ const Home = () => {
         <Header className="fixed" />
       </div>
       <div className="w-full h-[400px] bg-gradient-to-b from-bg-400 shrink-0 to-transparent" />
-      <div className="flex flex-col w-full max-w-[900px] px-3">
-        <Bio className="" />
-        <Tools className="pt-[200px]" />
+      <div className="flex flex-col w-full items-center">
+        <Bio className={mainWidthClassName} />
+        <Tools className={cn(mainWidthClassName, "pt-[200px]")} />
         <SelectedWorks className="pt-[200px]" />
-        <QuickLinksSection className="pt-[200px]" />
-        <Contact className="pb-[200px] pt-[200px]" />
+        <QuickLinksSection className={cn("pt-[200px]", mainWidthClassName)} />
+        <Contact className={cn(mainWidthClassName, "pb-[200px] pt-[200px]")} />
       </div>
     </div>
   );

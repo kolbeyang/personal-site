@@ -22,4 +22,15 @@ export const projects: Project[] = [
       "/red-bean/red-bean-03.png",
     ],
   },
+  {
+    title: "Habit Square",
+    description: "A simple habit tracker",
+    link: "https://www.kolbeyang.com/habits/",
+    imagePaths: [
+      "/habit-square/habit-square-signin.png",
+      "/habit-square/habit-square-new.png",
+      "/habit-square/habit-square-today.png",
+      "/habit-square/habit-square-weekly.png",
+    ],
+  },
 ];

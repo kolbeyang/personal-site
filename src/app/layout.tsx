@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.variable,
-          "font-inter antialiased bg-bg-200 text-text-base overscroll-y-none",
+          "font-inter antialiased bg-bg-100 text-text-base overscroll-y-none",
         )}
       >
         {children}
