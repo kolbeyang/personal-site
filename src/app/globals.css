@@ -1,6 +1,54 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@theme {
+  /* Font configuration */
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Define all your custom colors with --color- prefix */
+  --color-base-03: #a5baff;
+
+  --color-cyan-03: #97fcb2;
+  --color-cyan-05: #0068ae;
+
+  --color-green-03: #d9ff3f;
+  --color-green-05: #217f07;
+
+  --color-purple-03: #d199f0;
+  --color-purple-05: #320acf;
+
+  --color-red-03: #ff7373;
+  --color-red-05: #ab006f;
+
+  --color-highlight: #5ab3c1;
+
+  --color-text-dark: #415075;
+  --color-text-dark-secondary: #415075;
+  --color-text-light: #effdfd;
+
+  --color-text-base: #a2b9de;
+
+  --color-bg-100: #e4eef3;
+  --color-bg-200: #dae9f1;
+  --color-bg-300: #b8d6ee;
+  --color-bg-400: #97c8eb;
+  --color-bg-500: #8ac0e7;
+  --color-bg-600: #7eb9e4;
+  --color-bg-700: #71b1e0;
+  --color-bg-800: #65aadd;
+  --color-bg-900: #58a2d9;
+
+  --color-highlight: #83cbee;
+}
 
 :root {
   --background: #effbf8;
@@ -19,7 +67,5 @@
 /*}*/
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   scrollbar-color: rgb(206, 202, 205) transparent;
 }
