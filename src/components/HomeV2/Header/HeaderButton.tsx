@@ -7,7 +7,7 @@ const HeaderButton = ({ className, ...props }: Props) => {
   return (
     <a
       className={cn(
-        "backdrop-blur-md flex hover:bg-green-03 px-2 py-[2px] rounded-[2px] hover:text-green-05 hover:font-medium",
+        "backdrop-blur-md flex hover:bg-green-03 px-2 py-[2px] rounded-[2px] hover:text-green-05 hover:font-medium cursor-none",
         className,
       )}
       {...props}

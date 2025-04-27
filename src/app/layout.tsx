@@ -2,6 +2,7 @@ import { cn } from "@/utils/classNameMerge";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SmoothCursor from "@/components/ui/Cursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +34,7 @@ export default function RootLayout({
           "font-inter antialiased bg-bg-100 text-text-base overscroll-y-none",
         )}
       >
+        <SmoothCursor />
         {children}
       </body>
     </html>

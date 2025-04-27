@@ -25,7 +25,7 @@ const LinkButton = ({
     <a className={cn("flex", className)} target="_blank" {...props}>
       <Button
         className={cn(
-          "rounded-md ring ring-inset sm:size-[72px] flex justify-center items-center size-[56px]",
+          "rounded-md ring ring-inset sm:size-[72px] flex justify-center items-center size-[56px] cursor-none",
           buttonClassName,
         )}
       >
