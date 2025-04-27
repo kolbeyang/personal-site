@@ -32,14 +32,37 @@ interface Props {
 }
 
 const MainText = ({ className }: Props) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1,
+      },
+    },
+  };
+  const lineVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 75,
+        damping: 12,
+      },
+    },
+  };
+  const textVariants = {};
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 1,
-        delay: 1.5,
-      }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       className={cn(
         "flex flex-col items-end absolute w-full right-3 min-[440px]:right-[50%] min-[440px]:translate-x-[200px] top-[50%] -translate-y-[calc(50%+140px)] text-white text-[80px] leading-[70px] tracking-tighter",
         className,
@@ -48,33 +71,22 @@ const MainText = ({ className }: Props) => {
       {lines.map(({ text, link }) => (
         <motion.a
           key={text}
-          initial={{ paddingRight: 0 }}
+          variants={lineVariants}
           href={link}
-          className="relative group"
           target="_blank"
-          whileHover="expand"
+          className="group"
         >
-          <motion.div
-            className={cn(
-              "group-hover:flex hidden rounded-sm ring ring-inset ring-green-05/30 bg-green-03 absolute right-0 top-[50%] -translate-y-[50%] text-green-05 h-[62px] aspect-square items-center justify-center",
-            )}
-          >
-            <IconArrowUpRight size={60} stroke={1} />
-          </motion.div>
           <motion.span
-            initial={{ paddingRight: "0px" }}
-            transition={{
-              duration: 0.05,
-            }}
-            variants={{
-              expand: {
-                paddingRight: "72px",
-                transition: {
-                  duration: 0.05,
-                },
-              },
-            }}
+            className="group-hover:pr-[75px] transition-all duration-75 relative"
+            variants={textVariants}
           >
+            <div
+              className={cn(
+                "group-hover:flex hidden rounded-sm ring ring-inset ring-green-05/30 bg-green-03 absolute right-0 top-[50%] -translate-y-[50%] text-green-05 h-[62px] aspect-square items-center justify-center",
+              )}
+            >
+              <IconArrowUpRight size={60} stroke={1} />
+            </div>
             {text}
           </motion.span>
         </motion.a>

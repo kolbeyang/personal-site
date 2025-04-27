@@ -66,7 +66,10 @@ const Links = ({ className }: Props) => {
   return (
     <section
       id="socials"
-      className={cn("flex w-full flex-col items-center gap-[20px]", className)}
+      className={cn(
+        "flex w-full flex-1 h-full justify-center flex-col items-center gap-[20px]",
+        className,
+      )}
     >
       <div
         className=" flex flex-col text-[60px] sm:text-[80px] leading-[48px] sm:leading-[64px] font-medium tracking-tighter items-center

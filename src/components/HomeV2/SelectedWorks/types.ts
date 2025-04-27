@@ -3,4 +3,5 @@ export interface Project {
   description: string;
   link: string;
   imagePaths: string[];
+  tools: string[];
 }

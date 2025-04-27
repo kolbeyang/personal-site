@@ -18,14 +18,19 @@ const Home = () => {
   });
 
   const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [-13, 20, 100]);
+  const opacityOnScroll = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [1, 0.5, 0],
+  );
 
   const mainWidthClassName = "max-w-[900px] w-full px-3";
 
   return (
-    <div className="w-full overflow-x-hidden items-center flex flex-col relative">
+    <div className="w-full items-center flex flex-col relative">
       {/* Main scene */}
       <div
-        className="relative w-screen h-screen shrink-0 flex justify-center items-center bg-bg-400"
+        className="relative w-screen h-screen shrink-0 flex justify-center items-center bg-bg-400 overflow-hidden"
         ref={rotateRef}
       >
         {/*Absolutely positioned background gradient*/}
@@ -37,7 +42,7 @@ const Home = () => {
             "absolute flex justify-end flex-col items-start ",
             "w-[1000px] h-[1000px] bottom-[calc(50%-100px)] left-[calc(50%-160px)] origin-[10%_90%]",
           )}
-          style={{ rotate }}
+          style={{ rotate, opacity: opacityOnScroll }}
         >
           {/*Wall Color*/}
           <motion.div
@@ -52,11 +57,27 @@ const Home = () => {
 
           {/*Window - This will animate open*/}
           <motion.div
-            className="absolute bg-gradient-to-t from-bg-300 to-bg-400 m-[50px] ml-[80px] w-[260px] shadow-none rounded-xl"
-            initial={{ height: 0 }}
-            animate={{ height: 800 }}
+            className="absolute m-[50px] ml-[80px] w-[260px] shadow-none rounded-xl"
+            initial={{ backgroundColor: "#FFFFFF00" }} // Start with white color at 0 opacity
+            animate={{
+              boxShadow: [
+                "none",
+                "0 0 60px 0 var(--color-bg-300)",
+                "0 0 40px 0 var(--color-bg-300)",
+                "0 0 20px 0 var(--color-bg-300)",
+              ],
+              backgroundColor: [
+                "#FFFFFF00", // Start with 0 opacity
+                "var(--color-bg-100)", // Flash brightly
+                "var(--color-bg-200)", // Go back down
+                "var(--color-bg-300)",
+              ], // Slowly brighten
+              height: [0, 20, 40, 800],
+            }}
             transition={{
-              duration: 2,
+              duration: 3, // Total animation duration
+              times: [0, 0.05, 0.1, 0.4], // Control timing of keyframes
+              ease: ["easeIn", "easeOut", "easeInOut"], // Different easing for different segments
               delay: 0.5,
             }}
           />
@@ -82,8 +103,8 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-              duration: 2.5,
-              delay: 0.5,
+              duration: 1,
+              delay: 0.62,
             }}
           />
         </motion.div>
@@ -99,10 +120,11 @@ const Home = () => {
       <div className="w-full h-[400px] bg-gradient-to-b from-bg-400 shrink-0 to-transparent" />
       <div className="flex flex-col w-full items-center">
         <Bio className={mainWidthClassName} />
-        <Tools className={cn(mainWidthClassName, "pt-[200px]")} />
-        <SelectedWorks className="pt-[200px]" />
-        <QuickLinksSection className={cn("pt-[200px]", mainWidthClassName)} />
-        <Contact className={cn(mainWidthClassName, "pb-[200px] pt-[200px]")} />
+        <Tools className={cn(mainWidthClassName, "py-[200px]")} />
+        <SelectedWorks className="pt-[200px]">
+          <QuickLinksSection className={cn("", mainWidthClassName)} />
+        </SelectedWorks>
+        <Contact className={cn(mainWidthClassName, "h-screen")} />
       </div>
     </div>
   );

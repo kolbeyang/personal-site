@@ -25,14 +25,15 @@ const Header = ({ className }: Props) => {
         "px-2 sm:px-5 py-1 w-screen flex justify-between text-sm font-semibold",
         className,
       )}
-      initial={{ top: 0 }}
-      animate={{
-        top: isScrollDown ? -40 : 0,
-        color: isPastFirstPage ? "var(--color-text-base)" : "white",
+      initial="initial"
+      variants={{
+        initial: { top: -40 },
+        active: {
+          top: isScrollDown ? -40 : 0,
+          color: isPastFirstPage ? "var(--color-text-base)" : "white",
+        },
       }}
-      transition={{
-        duration: 0.2,
-      }}
+      animate="active"
     >
       <span className="py-[2px] px-1">KOLBE YANG</span>
       <span className="flex sm:gap-1">
