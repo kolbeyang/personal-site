@@ -1,9 +1,9 @@
+import SmoothCursor from "@/components/ui/Cursor";
 import { cn } from "@/utils/classNameMerge";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { BrowserView } from "react-device-detect";
 import "./globals.css";
-import SmoothCursor from "@/components/ui/Cursor";
-import { BrowserView, MobileView } from "react-device-detect";
 
 const inter = Inter({
   variable: "--font-inter",
