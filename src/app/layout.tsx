@@ -1,8 +1,6 @@
-import SmoothCursor from "@/components/ui/Cursor";
 import { cn } from "@/utils/classNameMerge";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { BrowserView } from "react-device-detect";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,9 +33,6 @@ export default function RootLayout({
           "font-inter antialiased bg-bg-100 text-text-base overscroll-y-none",
         )}
       >
-        <BrowserView>
-          <SmoothCursor />
-        </BrowserView>
         {children}
       </body>
     </html>
