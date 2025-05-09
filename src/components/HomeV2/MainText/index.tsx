@@ -74,7 +74,7 @@ const MainText = ({ className }: Props) => {
           variants={lineVariants}
           href={link}
           target="_blank"
-          className="group cursor-none"
+          className="group"
         >
           <motion.span
             className="group-hover:pr-[75px] transition-all duration-75 relative"

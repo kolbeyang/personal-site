@@ -36,7 +36,7 @@ const ProjectCard = ({ value, className, style }: Props) => {
           </span>
         </div>
         <a
-          className="shrink-0 text-[24px] leading-[22px] md:text-[54px] font-semibold md:leading-[50px] tracking-tight flex-1 text-left md:text-right hover:underline decoration-[1px] md:decoration-[2px] h-fit cursor-none "
+          className="shrink-0 text-[24px] leading-[22px] md:text-[54px] font-semibold md:leading-[50px] tracking-tight flex-1 text-left md:text-right hover:underline decoration-[1px] md:decoration-[2px] h-fit"
           href={link}
           target="_blank"
           rel="noopener noreferrer"

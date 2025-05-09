@@ -29,13 +29,13 @@ const PhotoGallery = ({ project }: Props) => {
       />
       <div className="absolute bottom-0 left-0 flex gap-1 w-full justify-between p-1">
         <Button
-          className="p-4 md:p-[10] ring-white text-white bg-white/40 hover:bg-white hover:text-text-base cursor-none"
+          className="p-4 md:p-[10] ring-white text-white bg-white/40 hover:bg-white hover:text-text-base"
           onClick={() => incrementImage(-1)}
         >
           <IconArrowLeft className="size-[40px] md:size-[60px]" stroke={0.5} />
         </Button>
         <Button
-          className="p-4 md:p-[10] ring-white text-white bg-white/40 hover:bg-white hover:text-text-base cursor-none"
+          className="p-4 md:p-[10] ring-white text-white bg-white/40 hover:bg-white hover:text-text-base"
           onClick={() => incrementImage(1)}
         >
           <IconArrowRight className="size-[40px] md:size-[60px]" stroke={0.5} />
