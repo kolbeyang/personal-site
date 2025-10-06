@@ -50,14 +50,14 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{
               duration: 1.5,
-              delay: 0.5,
+              delay: 0.1,
             }}
             className="absolute w-full h-full bg-radial-[at_0%_100%] to-[50%] from-bg-600 to-transparent"
           />
 
           {/*Window - This will animate open*/}
           <motion.div
-            className="absolute m-[50px] ml-[80px] w-[260px] shadow-none rounded-xl"
+            className="absolute m-[50px] ml-[80px] w-[240px] shadow-none rounded-xl"
             initial={{ backgroundColor: "#FFFFFF00" }} // Start with white color at 0 opacity
             animate={{
               boxShadow: [
@@ -75,10 +75,10 @@ const Home = () => {
               height: [0, 20, 40, 800],
             }}
             transition={{
-              duration: 3, // Total animation duration
-              times: [0, 0.05, 0.1, 0.4], // Control timing of keyframes
+              duration: 0.8, // Total animation duration
+              times: [0, 0.01, 0.06, 0.3], // Control timing of keyframes
               ease: ["easeIn", "easeOut", "easeInOut"], // Different easing for different segments
-              delay: 0.5,
+              delay: 0.1,
             }}
           />
 
@@ -88,8 +88,8 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-              duration: 1,
-              delay: 1,
+              duration: 0.2,
+              delay: 0.1,
             }}
           />
 
@@ -97,14 +97,14 @@ const Home = () => {
           <motion.img
             src="/me-and-the-couch.PNG" // Image in the public folder
             alt="A description of the image"
-            className="absolute flex justify-end flex-col items-start left-[-230px] bottom-[-440px]"
+            className="absolute flex justify-end flex-col items-start left-[-230px] bottom-[-400px] scale-75"
             width={420}
             height={420}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-              duration: 1,
-              delay: 0.62,
+              duration: 0.8,
+              delay: 0.2,
             }}
           />
         </motion.div>

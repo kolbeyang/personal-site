@@ -18,9 +18,9 @@ const Logo = ({ scrollYProgress, ...props }: Props) => {
       const shapes = svgResult.paths.flatMap((p) => p.toShapes(true));
       const geometry = new THREE.ExtrudeGeometry(shapes, {
         depth: 16,
-        bevelThickness: 3,
-        bevelSize: 3,
-        bevelSegments: 16,
+        bevelThickness: 1,
+        bevelSize: 1,
+        bevelSegments: 4,
       });
       geometry.center();
       return geometry;
@@ -59,7 +59,7 @@ const Logo = ({ scrollYProgress, ...props }: Props) => {
       */}
       <MeshTransmissionMaterial
         color="#A2B9DE"
-        transmission={0.1}
+        transmission={0.2}
         thickness={3}
         roughness={0.4}
       />

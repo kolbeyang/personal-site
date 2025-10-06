@@ -37,8 +37,8 @@ const MainText = ({ className }: Props) => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 1,
+        staggerChildren: 0.05,
+        delayChildren: 0.3,
       },
     },
   };
@@ -51,9 +51,8 @@ const MainText = ({ className }: Props) => {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
-        stiffness: 75,
-        damping: 12,
+        ease: "linear",
+        duration: 0.05,
       },
     },
   };
@@ -64,7 +63,7 @@ const MainText = ({ className }: Props) => {
       initial="hidden"
       animate="visible"
       className={cn(
-        "flex flex-col items-end absolute w-full right-3 min-[440px]:right-[50%] min-[440px]:translate-x-[200px] top-[50%] -translate-y-[calc(50%+140px)] text-white text-[80px] leading-[70px] tracking-tighter",
+        "flex flex-col items-end absolute w-full right-3 min-[440px]:right-[50%] min-[440px]:translate-x-[200px] top-[50%] -translate-y-[calc(50%+140px)] text-white text-[60px] sm:text-[60px] leading-[48px] sm:leading-[54px] tracking-tighter",
         className,
       )}
     >
@@ -77,15 +76,15 @@ const MainText = ({ className }: Props) => {
           className="group"
         >
           <motion.span
-            className="group-hover:pr-[75px] transition-all duration-75 relative"
+            className="group-hover:pr-[60px] transition-all duration-75 relative"
             variants={textVariants}
           >
             <div
               className={cn(
-                "group-hover:flex hidden rounded-sm ring ring-inset ring-green-05/30 bg-green-03 absolute right-0 top-[50%] -translate-y-[50%] text-green-05 h-[62px] aspect-square items-center justify-center",
+                "group-hover:flex hidden rounded-sm ring ring-inset ring-green-05/30 bg-green-03 absolute right-0 top-[50%] -translate-y-[50%] text-green-05 h-[48px] aspect-square items-center justify-center",
               )}
             >
-              <IconArrowUpRight size={60} stroke={1} />
+              <IconArrowUpRight size={48} stroke={1} />
             </div>
             {text}
           </motion.span>

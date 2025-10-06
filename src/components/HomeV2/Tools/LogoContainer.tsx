@@ -10,7 +10,7 @@ interface Props {
 
 const LogoContainer = ({ className, scrollYProgress }: Props) => {
   return (
-    <div className={cn("size-[600px]", className)}>
+    <div className={cn("", className)}>
       <Canvas
         camera={{
           position: [-64, -136, 218],
@@ -19,7 +19,19 @@ const LogoContainer = ({ className, scrollYProgress }: Props) => {
         }}
       >
         <ambientLight intensity={4} />
-        <pointLight position={[100, 100, 200]} decay={0} intensity={Math.PI} />
+        <pointLight position={[200, 200, 400]} decay={0} intensity={3} />
+        <pointLight
+          position={[-400, 400, -200]}
+          decay={0}
+          intensity={1.5}
+          color="#FF46A9"
+        />
+        <pointLight
+          position={[400, -400, -200]}
+          decay={0}
+          intensity={3}
+          color="#00FFFF"
+        />
         <hemisphereLight
           color="#FFFFFF" // Top light
           groundColor="#438AFF" // Bottom (fills shadows with color)

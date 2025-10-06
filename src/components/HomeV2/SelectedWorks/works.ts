@@ -16,18 +16,6 @@ export const projects: Project[] = [
     tools: ["NextJS", "React", "TailwindCSS", "Supabase"],
   },
   {
-    title: "Red Bean",
-    description:
-      "Red Bean: Dragon Slayer is an innovative single-player role-playing card game that combines elements of comic books, video games, and traditional playing cards. The game uses a standard 52-card poker deck with a unique navigation system of colored arrows and tabs that allows players to follow different storylines. \nThe successfully funded Kickstarter project raised over $12,500 from 374 backers.",
-    link: "https://www.kickstarter.com/projects/1621292893/red-bean-dragon-slayer",
-    imagePaths: [
-      "/red-bean/red-bean-01.png",
-      "/red-bean/red-bean-02.png",
-      "/red-bean/red-bean-03.png",
-    ],
-    tools: ["Kickstarter", "Photoshop", "Illustrator"],
-  },
-  {
     title: "Habit Square",
     description:
       "Habit Square is a full-stack web application for tracking daily habits. The app features a user-friendly interface to help users build and maintain positive routines, with data stored in a Supabase SQL database. It includes Google authentication integration via Supabase Auth for seamless user login.",
@@ -53,5 +41,17 @@ export const projects: Project[] = [
       "/thirty-minute-designs/thirty-min-design-02.png",
     ],
     tools: ["Figma"],
+  },
+  {
+    title: "Red Bean",
+    description:
+      "Red Bean: Dragon Slayer is an innovative single-player role-playing card game that combines elements of comic books, video games, and traditional playing cards. The game uses a standard 52-card poker deck with a unique navigation system of colored arrows and tabs that allows players to follow different storylines. \nThe successfully funded Kickstarter project raised over $12,500 from 374 backers.",
+    link: "https://www.kickstarter.com/projects/1621292893/red-bean-dragon-slayer",
+    imagePaths: [
+      "/red-bean/red-bean-01.png",
+      "/red-bean/red-bean-02.png",
+      "/red-bean/red-bean-03.png",
+    ],
+    tools: ["Kickstarter", "Photoshop", "Illustrator"],
   },
 ];
