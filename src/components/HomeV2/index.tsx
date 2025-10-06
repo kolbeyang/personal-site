@@ -119,9 +119,9 @@ const Home = () => {
       </div>
       <div className="w-full h-[400px] bg-gradient-to-b from-bg-400 shrink-0 to-transparent" />
       <div className="flex flex-col w-full items-center">
-        <Bio className={mainWidthClassName} />
-        <Tools className={cn(mainWidthClassName, "py-[200px]")} />
-        <SelectedWorks className="pt-[200px]">
+        <Bio className={cn(mainWidthClassName, "mb-[140px]")} />
+        <Tools className={cn(mainWidthClassName, "mb-[90px]")} />
+        <SelectedWorks className="">
           <QuickLinksSection className={cn("", mainWidthClassName)} />
         </SelectedWorks>
         <Contact className={cn(mainWidthClassName, "h-screen")} />
