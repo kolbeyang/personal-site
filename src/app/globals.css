@@ -37,11 +37,18 @@
 
   --color-text-base: #a2b9de;
 
+  --color-primary-100: #f0f5fa;
+  --color-primary-200: #e2eef8;
+  --color-primary-300: #c8e1f2;
+  --color-primary-500: #b3cde8;
+  --color-primary-700: #7596be;
+
   --color-bg-100: #e4eef3;
   --color-bg-200: #dae9f1;
-  --color-bg-300: #b8d6ee;
-  --color-bg-400: #97c8eb;
-  --color-bg-500: #8ac0e7;
+  --color-bg-300: #c8e3fa;
+  --color-bg-400: #bbe1fe;
+  --color-bg-500: #a7d8fd;
+
   --color-bg-600: #7eb9e4;
   --color-bg-700: #71b1e0;
   --color-bg-800: #65aadd;
@@ -51,7 +58,7 @@
 }
 
 :root {
-  --background: #effbf8;
+  --background: var(--color-primary-700);
   --foreground: #171717;
 }
 
@@ -68,4 +75,6 @@
 
 body {
   scrollbar-color: rgb(206, 202, 205) transparent;
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
 }

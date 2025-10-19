@@ -1,7 +1,10 @@
 import { cn } from "@/utils/classNameMerge";
 import { Canvas } from "@react-three/fiber";
-import { MotionValue } from "framer-motion";
-import Logo from "./Logo";
+import { MotionValue, useInView } from "framer-motion";
+import Logos from "./Logos";
+import { useRef } from "react";
+
+export const CAMERA_ORIGINAL_Y_POS = -136;
 
 interface Props {
   className?: string;
@@ -9,21 +12,24 @@ interface Props {
 }
 
 const LogoContainer = ({ className, scrollYProgress }: Props) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { margin: "100px" });
   return (
-    <div className={cn("", className)}>
+    <div className={cn("", className)} ref={ref}>
       <Canvas
+        frameloop={isInView ? "always" : "never"}
         camera={{
-          position: [-64, -136, 218],
+          position: [-64, CAMERA_ORIGINAL_Y_POS, 218],
           fov: 30,
           rotation: [0.175 * Math.PI, -0.075 * Math.PI, -0.1 * Math.PI],
         }}
       >
-        <ambientLight intensity={4} />
+        <ambientLight intensity={3} />
         <pointLight position={[200, 200, 400]} decay={0} intensity={3} />
         <pointLight
-          position={[-400, 400, -200]}
+          position={[-800, 800, 0]}
           decay={0}
-          intensity={1.5}
+          intensity={4}
           color="#FF46A9"
         />
         <pointLight
@@ -33,11 +39,11 @@ const LogoContainer = ({ className, scrollYProgress }: Props) => {
           color="#00FFFF"
         />
         <hemisphereLight
-          color="#FFFFFF" // Top light
+          color="#00FFFF" // Top light
           groundColor="#438AFF" // Bottom (fills shadows with color)
           intensity={3}
         />
-        <Logo scrollYProgress={scrollYProgress} />
+        <Logos scrollYProgress={scrollYProgress} />
       </Canvas>
     </div>
   );

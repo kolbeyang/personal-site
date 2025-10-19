@@ -63,7 +63,7 @@ const MainText = ({ className }: Props) => {
       initial="hidden"
       animate="visible"
       className={cn(
-        "flex flex-col items-end absolute w-full right-3 min-[440px]:right-[50%] min-[440px]:translate-x-[200px] top-[50%] -translate-y-[calc(50%+140px)] text-white text-[60px] sm:text-[60px] leading-[48px] sm:leading-[54px] tracking-tighter",
+        "flex flex-col items-end absolute w-full text-[40px] sm:text-[60px] leading-[36px] sm:leading-[54px] tracking-tighter",
         className,
       )}
     >
@@ -76,7 +76,7 @@ const MainText = ({ className }: Props) => {
           className="group"
         >
           <motion.span
-            className="group-hover:pr-[60px] transition-all duration-75 relative"
+            className="group-hover:pr-[60px] transition-all duration-75 relative font-medium"
             variants={textVariants}
           >
             <div
