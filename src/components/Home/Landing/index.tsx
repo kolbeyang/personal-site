@@ -33,7 +33,7 @@ const Landing = ({ className }: Props) => {
           animate={{ opacity: 1 }}
           transition={{
             duration: 1.5,
-            delay: 0.1,
+            delay: 0.5,
           }}
           className="absolute w-full h-full bg-radial-[at_0%_100%] to-[50%] from-bg-500 to-transparent"
         />
@@ -52,27 +52,27 @@ const Landing = ({ className }: Props) => {
             backgroundColor: [
               "#FFFFFF00", // Start with 0 opacity
               "var(--color-bg-100)", // Flash brightly
-              "var(--color-bg-200)", // Go back down
+              "var(--color-green-03)", // Go back down
               "var(--color-bg-300)",
             ], // Slowly brighten
             height: [0, 20, 40, 800],
           }}
           transition={{
-            duration: 0.8, // Total animation duration
+            duration: 1, // Total animation duration
             times: [0, 0.01, 0.06, 0.3], // Control timing of keyframes
             ease: ["easeIn", "easeOut", "easeInOut"], // Different easing for different segments
-            delay: 0.1,
+            delay: 0.5,
           }}
         />
 
         {/*Absolutely positioned background gradient*/}
         <motion.div
-          className="translate-y-[50%] translate-x-[100px] left-0 absolute h-[600px] aspect-square bg-radial from-pink-300/30 to-transparent to-[60%] z-10 pointer-events-none"
+          className="translate-y-[50%] translate-x-[100px] left-0 absolute h-[600px] aspect-square bg-radial from-pink-200/30 to-transparent to-[60%] z-10 pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            duration: 0.2,
-            delay: 0.1,
+            duration: 2,
+            delay: 1,
           }}
         />
 
@@ -86,8 +86,8 @@ const Landing = ({ className }: Props) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            duration: 0.8,
-            delay: 0.2,
+            duration: 1.4,
+            delay: 0.7,
           }}
         />
       </motion.div>
