@@ -1,16 +1,14 @@
 import { MeshTransmissionMaterial } from "@react-three/drei";
 import { ThreeElements, useLoader } from "@react-three/fiber";
-import { MotionValue } from "framer-motion";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { SVGLoader } from "three/addons/loaders/SVGLoader.js";
 
 type Props = ThreeElements["mesh"] & {
-  scrollYProgress: MotionValue<number>;
   svgPath: string;
 };
 
-const Logo = ({ scrollYProgress, svgPath, ...props }: Props) => {
+const Logo = ({ svgPath, ...props }: Props) => {
   const meshRef = useRef<THREE.Mesh>(null);
 
   const svgResult = useLoader(SVGLoader, svgPath);

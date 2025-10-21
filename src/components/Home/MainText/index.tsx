@@ -1,7 +1,6 @@
 import PeekaboButton from "@/components/ui/PeekaboButton";
 import { links } from "@/links";
 import { cn } from "@/utils/classNameMerge";
-import { IconArrowUpRight } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 interface Line {
