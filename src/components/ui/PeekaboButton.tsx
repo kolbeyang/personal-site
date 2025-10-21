@@ -65,7 +65,8 @@ const PeekaboButton = ({ link, children, className }: Props) => {
         className="absolute bottom-0 right-0 bg-green-03"
       />
       <motion.span variants={textVariants}>{children}</motion.span>
-      <div
+      <motion.div
+        variants={textVariants}
         className={cn(
           "relative shrink-0 group-hover:bg-green-03 h-full aspect-square outline-primary-500 rounded-[4px] -outline-offset-1",
           "group-hover:outline-1",
@@ -79,7 +80,7 @@ const PeekaboButton = ({ link, children, className }: Props) => {
             "sm:size-[80px] group-hover:sm:size-[60px] ",
           )}
         />
-      </div>
+      </motion.div>
     </motion.a>
   );
 };
