@@ -55,10 +55,11 @@ const Logo = ({ scrollYProgress, ...props }: Props) => {
         roughness={0.1} // Surface smoothness
       />
       <meshPhongMaterial attach="material" color="#A1C0F3" />
-      <meshToonMaterial attach="material" color="#A1C0F3" />
+
+      <meshToonMaterial attach="material" color="#7596BE" />
       */}
       <MeshTransmissionMaterial
-        color="#A2B9DE"
+        color="#B1D6FB"
         transmission={0.2}
         thickness={3}
         roughness={0.4}
