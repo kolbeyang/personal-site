@@ -1,7 +1,4 @@
-import Button from "@/components/ui/Button";
 import { cn } from "@/utils/classNameMerge";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { useState } from "react";
 import { Project } from "./types";
 
 interface Props {
@@ -12,13 +9,19 @@ const PhotoGallery = ({ project }: Props) => {
   const { imagePaths, title } = project;
 
   return (
-    <div className={cn("w-full max-w-[600px] relative flex flex-col gap-2")}>
+    <div
+      className={cn(
+        "w-full max-w-[600px] relative flex gap-2 scrollbar-hide",
+        "flex-row overflow-x-auto p-2",
+        "sm:flex-col",
+      )}
+    >
       {imagePaths.map((imagePath) => (
         <img
           key={imagePath}
           src={imagePath}
           alt={title}
-          className="w-fill object-cover h-auto rounded-md"
+          className="w-[calc(100%-20px)] object-cover h-auto rounded-md"
         />
       ))}
     </div>

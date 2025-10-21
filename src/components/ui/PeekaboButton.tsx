@@ -36,7 +36,7 @@ const revealVariants = {
 
 const textVariants = {
   initial: {
-    translateY: "120%",
+    translateY: "140%",
   },
   animate: {
     translateY: "0px",
@@ -53,10 +53,11 @@ const PeekaboButton = ({ link, children, className }: Props) => {
       target="_blank"
       variants={buttonVariants}
       className={cn(
-        "flex items-center group gap-0 select-none relative overflow-y-hidden",
+        "flex items-center group gap-0 select-none relative overflow-hidden",
         "transition-all duration-50",
         "hover:gap-[12px]",
-        "sm:text-[60px] h-[50px]",
+        "text-[32px] h-[28px]",
+        "sm:text-[60px] sm:h-[50px]",
         className,
       )}
     >

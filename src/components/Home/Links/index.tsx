@@ -104,11 +104,12 @@ const Links = ({ className }: Props) => {
             initial="initial"
             whileInView="animate"
           >
-            <span className="sm:h-[50px]">ELSEWHERE</span>
-            <span className="sm:h-[50px]">ONLINE</span>
-            {lines.map(({ text }, i) => (
+            <span className="h-[28px] sm:h-[50px]">ELSEWHERE</span>
+            <span className="h-[28px] sm:h-[50px]">ONLINE</span>
+            {lines.map(({ text, link }, i) => (
               <PeekaboButton
                 key={text}
+                link={link}
                 className={cn("text-primary-500", {
                   "text-primary-700": currentIndex === i,
                 })}

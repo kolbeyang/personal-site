@@ -16,16 +16,18 @@ const ProjectCard = ({ value, className, style }: Props) => {
   return (
     <div
       className={cn(
-        "transition-all duration-300 ease-in-out py-4 md:py-2 px-8 md:px-8 bg-white backdrop-blur-sm w-full flex flex-row gap-[24px]",
-        "",
+        "transition-all duration-300 ease-in-out  bg-white backdrop-blur-sm w-full flex",
+        "flex-col-reverse",
+        "sm:flex-row sm:gap-[24px] ",
         className,
       )}
       style={style}
     >
       <div
         className={cn(
-          "flex flex-col w-full h-[calc(100dvh-32px)] sticky top-4 gap-2",
-          "sm:flex-row",
+          "flex flex-col w-full sticky top-4 gap-2",
+          "gap-2 px-4 py-2",
+          "sm:flex-row sm:h-[calc(100dvh-32px)]  sm:pl-10 sm:pr-6 sm:py-6",
         )}
       >
         <a
@@ -36,7 +38,7 @@ const ProjectCard = ({ value, className, style }: Props) => {
         >
           {title}
         </a>
-        <div className="flex h-full flex-col justify-between gap-2 md:flex-1">
+        <div className="flex h-full flex-col justify-between gap-6 md:flex-1">
           <span className="md:text-[18px] text-[12px] leading-[14px] md:leading-[22px] whitespace-pre-line space-y-2">
             {description.split("\n").map((line, index) => (
               <p key={index}>{line}</p>

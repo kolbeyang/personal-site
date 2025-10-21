@@ -51,8 +51,10 @@ const MainText = ({ className }: Props) => {
       initial="initial"
       whileInView="animate"
     >
-      {lines.map(({ text }, i) => (
-        <PeekaboButton key={text}>{text}</PeekaboButton>
+      {lines.map(({ text, link }) => (
+        <PeekaboButton key={text} link={link}>
+          {text}
+        </PeekaboButton>
       ))}
     </motion.div>
   );

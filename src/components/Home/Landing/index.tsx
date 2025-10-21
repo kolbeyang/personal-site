@@ -16,7 +16,7 @@ const Landing = ({ className }: Props) => {
       )}
     >
       {/*Name*/}
-      <Name className="absolute top-0 left-0" />
+      <Name className="absolute top-0 left-0 z-20" />
       {/*Absolutely positioned background gradient*/}
       <div className="absolute left-(50%) top-(50%) h-[150vh] aspect-square bg-radial to-transparent -z-10 from-bg-500/70 to-[60%]" />
 

@@ -1,4 +1,5 @@
 import Bio from "./Bio";
+import Footer from "./Footer";
 import Landing from "./Landing";
 import Links from "./Links";
 import SelectedWorks from "./SelectedWorks";
@@ -14,6 +15,7 @@ const Home = () => {
       <Tools className="rounded-[24px]" />
       <SelectedWorks />
       <Links />
+      <Footer />
     </div>
   );
 };
