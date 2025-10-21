@@ -20,12 +20,7 @@ const Logos = ({ scrollYProgress }: Props) => {
   return (
     <>
       {svgPaths.map((svgPath, i) => (
-        <Logo
-          key={svgPath}
-          scrollYProgress={scrollYProgress}
-          svgPath={svgPath}
-          position={[0, -120 * i, 0]}
-        />
+        <Logo key={svgPath} svgPath={svgPath} position={[0, -120 * i, 0]} />
       ))}
     </>
   );
