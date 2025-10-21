@@ -15,6 +15,7 @@ const LogoContainer = ({ className, scrollYProgress }: Props) => {
   return (
     <div className={cn("", className)} ref={ref}>
       <Canvas
+        gl={{ antialias: false }} // Disable if not needed
         frameloop={isInView ? "always" : "never"}
         camera={{
           position: [-64, -136, 218],

@@ -16,7 +16,7 @@ const ProjectCard = ({ value, className, style }: Props) => {
   return (
     <div
       className={cn(
-        "transition-all duration-300 ease-in-out border-t border-bg-600/80 py-4 md:py-2 px-8 md:px-8 bg-white backdrop-blur-sm w-full flex flex-row gap-[24px]",
+        "transition-all duration-300 ease-in-out py-4 md:py-2 px-8 md:px-8 bg-white backdrop-blur-sm w-full flex flex-row gap-[24px]",
         "",
         className,
       )}

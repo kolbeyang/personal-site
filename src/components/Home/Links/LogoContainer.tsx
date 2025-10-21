@@ -18,6 +18,8 @@ const LogoContainer = ({ className, scrollYProgress }: Props) => {
     <div className={cn("", className)} ref={ref}>
       <Canvas
         frameloop={isInView ? "always" : "never"}
+        gl={{ antialias: false }} // Disable if not needed
+        dpr={[0.5, 2]} // Limit pixel ratio for better performance
         camera={{
           position: [-64, CAMERA_ORIGINAL_Y_POS, 218],
           fov: 30,

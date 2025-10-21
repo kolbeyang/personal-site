@@ -2,19 +2,52 @@
 
 import { cn } from "@/utils/classNameMerge";
 
-import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef, useState } from "react";
 import LogoContainer from "./LogoContainer";
+import PeekaboButton from "@/components/ui/PeekaboButton";
+import { links } from "@/links";
 
-const tools = ["GITHUB", "DRIBBBLE", "MEDIUM", "INSTAGRAM", "LINKEDIN"];
+interface Line {
+  text: string;
+  link: string;
+  path: string;
+}
 
-export const svgPaths = [
-  "/logos/github.svg",
-  "/logos/dribbble.svg",
-  "/logos/medium.svg",
-  "/logos/instagram.svg",
-  "/logos/linkedin.svg",
+const lines: Line[] = [
+  {
+    text: "GITHUB",
+    link: links.github,
+    path: "/logos/github.svg",
+  },
+  {
+    text: "DRIBBBLE",
+    link: links.dribbble,
+    path: "/logos/dribbble.svg",
+  },
+  {
+    text: "MEDIUM",
+    link: links.medium,
+    path: "/logos/medium.svg",
+  },
+  {
+    text: "INSTAGRAM",
+    link: links.instagram,
+    path: "/logos/instagram.svg",
+  },
+  {
+    text: "LINKEDIN",
+    link: links.linkedin,
+    path: "/logos/linkedin.svg",
+  },
 ];
+
+export const svgPaths = lines.map((line) => line.path);
 
 interface Props {
   className?: string;
@@ -32,7 +65,7 @@ const Links = ({ className }: Props) => {
 
   const toolIndex = useTransform(() => {
     const raw = scrollYProgress.get();
-    const scaled = raw * (tools.length - 1);
+    const scaled = raw * (lines.length - 1);
     const rounded = Math.round(scaled);
     return rounded;
   });
@@ -58,20 +91,32 @@ const Links = ({ className }: Props) => {
             )}
             scrollYProgress={scrollYProgress}
           />
-          <div className="flex flex-col items-end gap-2 h-full absolute right-5 top-5 sm:right-10 sm:top-10">
-            <span>ELSEWHERE</span>
-            <span>ONLINE</span>
-            {tools.map((tool, i) => (
-              <span
-                key={tool}
+          <motion.div
+            className="flex flex-col items-end gap-0 h-full absolute right-5 top-5 sm:right-10 sm:top-10"
+            variants={{
+              initial: {},
+              animate: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            initial="initial"
+            whileInView="animate"
+          >
+            <span className="sm:h-[50px]">ELSEWHERE</span>
+            <span className="sm:h-[50px]">ONLINE</span>
+            {lines.map(({ text }, i) => (
+              <PeekaboButton
+                key={text}
                 className={cn("text-primary-500", {
                   "text-primary-700": currentIndex === i,
                 })}
               >
-                {tool}
-              </span>
+                {text}
+              </PeekaboButton>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -79,4 +124,3 @@ const Links = ({ className }: Props) => {
 };
 
 export default Links;
-

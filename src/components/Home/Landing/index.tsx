@@ -1,6 +1,7 @@
 import { cn } from "@/utils/classNameMerge";
 import { motion } from "framer-motion";
 import MainText from "../MainText";
+import Name from "./Name";
 
 interface Props {
   className?: string;
@@ -14,6 +15,8 @@ const Landing = ({ className }: Props) => {
         className,
       )}
     >
+      {/*Name*/}
+      <Name className="absolute top-0 left-0" />
       {/*Absolutely positioned background gradient*/}
       <div className="absolute left-(50%) top-(50%) h-[150vh] aspect-square bg-radial to-transparent -z-10 from-bg-500/70 to-[60%]" />
 
