@@ -1,8 +1,9 @@
 interface Props {
   className?: string;
+  fill?: string;
 }
 
-const FolderTab = ({ className }: Props) => {
+const FolderTab = ({ className, fill }: Props) => {
   return (
     <svg
       width="360"
@@ -14,7 +15,7 @@ const FolderTab = ({ className }: Props) => {
     >
       <path
         d="M276.833 0C318.166 0 318.167 60 360 60H0V40C0 17.9086 17.9086 0 40 0H276.833Z"
-        fill="white"
+        fill={fill || "white"}
       />
     </svg>
   );

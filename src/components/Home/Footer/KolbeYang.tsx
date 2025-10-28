@@ -34,10 +34,10 @@ const KolbeYang = ({ className, fill }: Props) => {
               "#FFFFFF00",
             ],
             transition: {
-              duration: 2,
+              duration: 3,
             },
           }}
-          strokeWidth={2}
+          strokeWidth={0.5}
         />
       ))}
     </motion.svg>

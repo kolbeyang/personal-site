@@ -1,10 +1,8 @@
 import { cn } from "@/utils/classNameMerge";
+import { motion } from "framer-motion";
 import FolderTab from "./FolderTab";
 import ProjectCard from "./ProjectCard";
 import { projects } from "./works";
-import { Fragment } from "react";
-import { motion } from "framer-motion";
-
 interface Props {
   className?: string;
 }
@@ -23,23 +21,26 @@ const SelectedWorks = ({ className }: Props) => {
       >
         SELECTED WORKS
       </div>
-      <div className="bg-white">
-        {projects.map((project) => (
-          <Fragment key={project.title}>
-            <motion.div
-              className="border-t"
-              initial={{ borderColor: "var(--color-green-03)", width: "0%" }}
-              whileInView={{
-                borderColor: "var(--color-primary-500)",
-                width: "100%",
-              }}
-              viewport={{ once: false, amount: 1 }}
-              transition={{
-                duration: 1,
-              }}
-            />
-            <ProjectCard value={project} className={cn("")} />
-          </Fragment>
+      <div className="bg-white relative">
+        <motion.div
+          className="border-t absolute top-0 z-10 right-0"
+          initial={{ borderColor: "var(--color-green-03)", width: "0%" }}
+          whileInView={{
+            borderColor: "var(--color-primary-500)",
+            width: "100%",
+          }}
+          viewport={{ once: false, amount: 1 }}
+          transition={{
+            duration: 1,
+          }}
+        />
+        {projects.map((project, i) => (
+          <ProjectCard
+            key={project.title}
+            value={project}
+            className={cn("")}
+            fadeBackgroundOnScroll={i !== projects.length - 1}
+          />
         ))}
       </div>
     </div>

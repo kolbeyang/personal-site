@@ -1,6 +1,6 @@
 import { cn } from "@/utils/classNameMerge";
-import InverseRounded from "./InverseRounded";
 import { motion } from "framer-motion";
+import InverseRounded from "./InverseRounded";
 
 interface Props {
   className?: string;

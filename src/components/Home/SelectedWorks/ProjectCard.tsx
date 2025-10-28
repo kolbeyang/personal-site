@@ -1,28 +1,60 @@
 import { cn } from "@/utils/classNameMerge";
-import { CSSProperties, useMemo } from "react";
+import { CSSProperties, useMemo, useRef } from "react";
 import PhotoGallery from "./PhotoGallery";
 import { Project } from "./types";
+import FolderTab from "./FolderTab";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 interface Props {
   value: Project;
   className?: string;
   style?: CSSProperties;
+  fadeBackgroundOnScroll?: boolean;
 }
 
-const ProjectCard = ({ value, className, style }: Props) => {
+const ProjectCard = ({
+  value,
+  className,
+  style,
+  fadeBackgroundOnScroll = true,
+}: Props) => {
+  const ref = useRef(null);
+
   const { title, link, description, tools } = value;
   const toolsString = useMemo(() => tools.join(", "), [tools]);
 
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "end start"],
+  });
+
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0.1, 0.9],
+    ["white", "var(--color-primary-100)"], // green to red
+  );
+
   return (
-    <div
+    <motion.div
+      ref={ref}
       className={cn(
-        "transition-all duration-300 ease-in-out  bg-white backdrop-blur-sm w-full flex",
-        "flex-col-reverse",
-        "sm:flex-row sm:gap-[24px] ",
+        "transition-all duration-300 ease-in-out  bg-white backdrop-blur-sm w-full flex relative",
+        "flex-col-reverse border-b border-b-primary-500",
+        "sm:flex-row sm:gap-[24px] sm:border-none",
         className,
       )}
-      style={style}
+      style={{
+        ...(fadeBackgroundOnScroll ? { backgroundColor } : {}),
+        ...style,
+      }}
     >
+      <FolderTab
+        className={cn(
+          "top-0 -translate-y-full",
+          "w-[132px] h-[22px] hidden",
+          "sm:w-[360px] sm:h-[60px] sm:absolute sm:block",
+        )}
+      />
       <div
         className={cn(
           "flex flex-col w-full sticky top-4 gap-2",
@@ -50,7 +82,7 @@ const ProjectCard = ({ value, className, style }: Props) => {
         </div>
       </div>
       <PhotoGallery project={value} />
-    </div>
+    </motion.div>
   );
 };
 
