@@ -28,15 +28,32 @@ const Signature = ({ stroke }: Props) => {
             initial: {
               pathLength: 0,
               strokeLinecap: "butt",
+              strokeWidth: 6,
+              stroke: "var(--color-green-03)",
             },
             animate: {
               pathLength: 1,
               strokeLinecap: "round",
+              strokeWidth: 3,
+              stroke,
+
+              transition: {
+                duration: 0.2,
+                pathLength: {
+                  duration: 0.2,
+                  ease: "easeIn",
+                },
+                strokeWidth: {
+                  duration: 0.6,
+                  ease: "easeOut",
+                },
+                stroke: {
+                  duration: 0.8,
+                  ease: "easeOut",
+                },
+              },
             },
           }}
-          transition={{ duration: 0.2, ease: "easeIn" }}
-          stroke={stroke ?? "black"}
-          strokeWidth="3"
         />
       ))}
     </motion.svg>
