@@ -76,6 +76,7 @@ const Links = ({ className }: Props) => {
 
   return (
     <section
+      id="links"
       ref={ref}
       className={cn(
         "h-[2000px] text-[32px] sm:text-[60px] leading-[22px] sm:leading-[42px]  gap-2 tracking-tighter font-medium relative w-full max-w-full",

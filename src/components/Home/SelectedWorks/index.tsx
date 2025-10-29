@@ -9,7 +9,7 @@ interface Props {
 
 const SelectedWorks = ({ className }: Props) => {
   return (
-    <div className={cn("", className)}>
+    <div className={cn("", className)} id="projects">
       <FolderTab
         className={cn("w-[132px] h-[22px]", "sm:w-[360px] sm:h-[60px]")}
       />

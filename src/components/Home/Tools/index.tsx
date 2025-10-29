@@ -45,6 +45,7 @@ const Tools = ({ className }: Props) => {
   return (
     <section
       ref={ref}
+      id="tools"
       className={cn(
         "h-[3000px] text-[32px] sm:text-[60px] leading-[22px] sm:leading-[42px]  gap-2 tracking-tighter font-medium relative w-full max-w-full",
         className,

@@ -29,11 +29,13 @@ const Home = () => {
           <Landing className="rounded-r-[24px] rounded-bl-[24px]" />
         )}
       </div>
-      <Bio className="w-full flex justify-center item-center" />
-      <Tools className="rounded-[24px]" />
-      <SelectedWorks />
-      <Links />
-      <Footer />
+      <div className={isPlaying ? "hidden pointer-events-none" : ""}>
+        <Bio className="w-full flex justify-center item-center" />
+        <Tools className="rounded-[24px]" />
+        <SelectedWorks />
+        <Links />
+        <Footer />
+      </div>
     </div>
   );
 };
