@@ -60,6 +60,9 @@
 :root {
   --background: var(--color-primary-700);
   --foreground: #171717;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 ::selection {

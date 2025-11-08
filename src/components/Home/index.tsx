@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="w-full items-center">
+    <div className="w-full items-center scrollbar-hide">
       <div className="flex flex-col p-[20px] sm:p-[40px] w-full h-dvh">
         {isPlaying ? (
           <IntroAnimation />
